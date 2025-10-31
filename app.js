@@ -17,5 +17,25 @@ while (true) {
         case '1':
             alert(`Ваш баланс: ${balance} $`);
             break;
+        case '2':
+            const amoutToWithdraw = Number(prompt('Введите сумму для снятия'));
+            if (isNaN(amoutToWithdraw) || amoutToWithdraw<=0) {
+                alert ('Ошибка: введена некорректная сумма.');
+            } else if (amoutToWithdraw > balance) {
+                alert('Ошибка: на счёте недостаточно средств.');
+            } else {
+                balance-=amoutToWithdraw;
+                alert(`Оставшийся баланс: ${balance} $`);
+            }
+            break;
+        case '3':
+            const amoutToDeposit = Number(prompt('Введите сумму для пополнения.'));
+            if (isNaN(amoutToDeposit) || amoutToDeposit<=0) {
+                alert ('Ошибка: введена некорректная сумма.');
+            } else{
+                balance+=amoutToDeposit;
+                alert(`Счёт пополнен. Ваш баланс: ${balance} $`);
+            }
+            break;
     }
 }
