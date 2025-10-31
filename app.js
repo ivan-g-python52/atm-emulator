@@ -1,7 +1,7 @@
 'use strict';
 let balance = 10000;
-
-while (true) {
+let isRunning = true;
+while (isRunning) {
     const menu = `
     Добро пожаловать в банкомат!
     Ваш выбор:
@@ -37,5 +37,16 @@ while (true) {
                 alert(`Счёт пополнен. Ваш баланс: ${balance} $`);
             }
             break;
+        case '4':
+            isRunning = false;
+            alert('Спасибо за использование нашего банкомата!');
+            break;
+        case null:
+            isRunning=false;
+            alert('Спасибо за использование нашего банкомата!');
+            break;
+        default:
+            alert('Ошибка. Выбран неверный код меню');
+            break;       
     }
 }
